@@ -100,61 +100,40 @@ h2 {
     color: var(--text-color);
 }
 
-.reveal-box {
-    min-height: 100px;
-    background-color: #f8f9fa;
-    border: 2px dashed #ccd0d5;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.reveal-list {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+.reveal-list li {
+    margin-bottom: 10px;
+    padding: 5px;
+    border-radius: 4px;
     cursor: pointer;
-    transition: all 0.3s ease;
-    position: relative;
-    padding: 10px;
+    transition: background-color 0.3s;
 }
 
-.reveal-box:hover {
+.reveal-list li:hover {
+    background-color: #f0f4f8;
+}
+
+.blank {
+    background-color: #d1d8e0;
+    color: transparent;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin: 0 2px;
+    border-bottom: 2px solid var(--primary-color);
+    transition: all 0.4s ease;
+    user-select: none;
+    display: inline-block;
+}
+
+.reveal-list li.active .blank {
     background-color: #eef2f7;
-    border-color: var(--primary-color);
-}
-
-.reveal-box::before {
-    content: "클릭하여 내용 보기";
-    color: #888;
+    color: var(--primary-color);
+    border-bottom-color: transparent;
     font-weight: bold;
-    font-size: 0.9rem;
-}
-
-.reveal-box.active {
-    background-color: transparent;
-    border: none;
-    min-height: auto;
-    display: block;
-    cursor: default;
-    padding: 0;
-}
-
-.reveal-box.active::before {
-    display: none;
-}
-
-.reveal-content {
-    display: none;
-    opacity: 0;
-    transform: translateY(10px);
-}
-
-.reveal-box.active .reveal-content {
-    display: block;
-    animation: fadeIn 0.5s forwards;
-}
-
-@keyframes fadeIn {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
 
 .grid {
