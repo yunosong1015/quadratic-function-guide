@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중3 수학: 이차함수 학습 가이드</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>중3 수학: 이차함수 완벽 가이드</h1>
+            <p>이차함수의 정의부터 그래프의 성질, 평행이동까지 한 번에 정리하세요.</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#definition">정의</a></li>
+            <li><a href="#basic">y=ax²</a></li>
+            <li><a href="#translation">평행이동</a></li>
+            <li><a href="#general">일반형</a></li>
+            <li><a href="#visualizer">탐색기</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <!-- 정의 섹션 -->
+        <section id="definition">
+            <h2>1. 이차함수의 정의</h2>
+            <div class="card">
+                <p>함수 y = f(x)에서 y가 x에 관한 이차식</p>
+                <div class="formula">y = ax² + bx + c (a ≠ 0, a, b, c는 상수)</div>
+                <p>로 나타내어질 때, 이 함수를 <strong>이차함수</strong>라고 합니다.</p>
+                <div class="note">
+                    <strong>주의:</strong> a가 0이면 이차함수가 아니며, 일차함수나 상수함수가 됩니다.
+                </div>
+            </div>
+        </section>
+
+        <!-- 기본형 섹션 -->
+        <section id="basic">
+            <h2>2. 이차함수 y = ax²의 그래프</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>그래프의 특징</h3>
+                    <ul>
+                        <li>원점 (0, 0)을 꼭짓점으로 합니다.</li>
+                        <li>y축을 축의 방정식(x=0)으로 합니다.</li>
+                        <li>모양은 <strong>포물선</strong>입니다.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>상수 a의 역할</h3>
+                    <ul>
+                        <li><strong>a > 0:</strong> 아래로 볼록</li>
+                        <li><strong>a < 0:</strong> 위로 볼록</li>
+                        <li><strong>|a|가 클수록:</strong> 그래프의 폭이 좁아짐</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 평행이동 섹션 -->
+        <section id="translation">
+            <h2>3. 이차함수의 평행이동</h2>
+            <div class="card">
+                <h3>표준형: y = a(x - p)² + q</h3>
+                <p>이차함수 y = ax²의 그래프를 x축 방향으로 p만큼, y축 방향으로 q만큼 평행이동한 것입니다.</p>
+                <ul class="properties">
+                    <li><strong>꼭짓점:</strong> (p, q)</li>
+                    <li><strong>축의 방정식:</strong> x = p</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 일반형 섹션 -->
+        <section id="general">
+            <h2>4. 이차함수 y = ax² + bx + c</h2>
+            <div class="card">
+                <p>일반형을 표준형으로 고쳐서 그래프의 성질을 파악합니다.</p>
+                <div class="formula-steps">
+                    y = ax² + bx + c <br>
+                    → y = a(x - p)² + q
+                </div>
+                
+                <div class="calculator">
+                    <h3>꼭짓점 계산기</h3>
+                    <p>계수를 입력하면 꼭짓점을 찾아줍니다.</p>
+                    <div class="calc-inputs">
+                        y = <input type="number" id="calc-a" value="1" step="0.1"> x² + 
+                        <input type="number" id="calc-b" value="2" step="0.1"> x + 
+                        <input type="number" id="calc-c" value="1" step="0.1">
+                    </div>
+                    <button id="calc-btn">계산하기</button>
+                    <div id="calc-result" class="result-box">
+                        꼭짓점: (-1, 0)
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 인터랙티브 탐색기 -->
+        <section id="visualizer">
+            <h2>5. 이차함수 그래프 탐색기</h2>
+            <div class="visualizer-container">
+                <div class="controls">
+                    <div class="control-group">
+                        <label for="a-slider">a (기울기/폭): <span id="a-val">1</span></label>
+                        <input type="range" id="a-slider" min="-5" max="5" step="0.1" value="1">
+                    </div>
+                    <div class="control-group">
+                        <label for="p-slider">p (x축 이동): <span id="p-val">0</span></label>
+                        <input type="range" id="p-slider" min="-10" max="10" step="0.5" value="0">
+                    </div>
+                    <div class="control-group">
+                        <label for="q-slider">q (y축 이동): <span id="q-val">0</span></label>
+                        <input type="range" id="q-slider" min="-10" max="10" step="0.5" value="0">
+                    </div>
+                    <div class="current-equation">
+                        식: <span id="eqn-text">y = 1(x - 0)² + 0</span>
+                    </div>
+                </div>
+                <div class="canvas-wrapper">
+                    <canvas id="graph-canvas" width="400" height="400"></canvas>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 이차함수 학습 가이드. 중3 수학의 기초를 탄탄하게.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
