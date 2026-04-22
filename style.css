@@ -203,6 +203,7 @@ h2 {
     border-radius: 4px;
     border-left: 4px solid var(--primary-color);
     font-weight: bold;
+    display: none;
 }
 
 .visualizer-container {

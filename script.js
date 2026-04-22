@@ -118,6 +118,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const calcBtn = document.getElementById('calc-btn');
     const calcResult = document.getElementById('calc-result');
 
+    let lastResult = "";
+
     calcBtn.addEventListener('click', () => {
         const a = parseFloat(calcA.value);
         const b = parseFloat(calcB.value);
@@ -125,13 +127,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (a === 0) {
             calcResult.textContent = 'a는 0이 될 수 없습니다 (이차함수가 아님).';
+            calcResult.style.display = 'block';
             return;
         }
 
         const p = -b / (2 * a);
         const q = (a * p * p) + (b * p) + c;
+        const currentResult = `꼭짓점: (${p.toFixed(2)}, ${q.toFixed(2)}) | 표준형: y = ${a}(x ${p >= 0 ? '-' : '+'} ${Math.abs(p).toFixed(2)})² ${q >= 0 ? '+' : '-'} ${Math.abs(q).toFixed(2)}`;
 
-        calcResult.textContent = `꼭짓점: (${p.toFixed(2)}, ${q.toFixed(2)}) | 표준형: y = ${a}(x ${p >= 0 ? '-' : '+'} ${Math.abs(p).toFixed(2)})² ${q >= 0 ? '+' : '-'} ${Math.abs(q).toFixed(2)}`;
+        // Toggle logic: if the result is already shown and it's the same, hide it.
+        if (calcResult.style.display === 'block' && lastResult === currentResult) {
+            calcResult.style.display = 'none';
+        } else {
+            calcResult.textContent = currentResult;
+            calcResult.style.display = 'block';
+            lastResult = currentResult;
+        }
     });
 
     // Reveal Logic (Line by line)
