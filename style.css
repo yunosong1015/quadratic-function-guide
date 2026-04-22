@@ -136,6 +136,27 @@ h2 {
     font-weight: bold;
 }
 
+.example-graph {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    background: #fdfdfd;
+    border-radius: 8px;
+    padding: 10px;
+    border: 1px solid #eee;
+}
+
+.example-graph svg {
+    max-width: 100%;
+    height: auto;
+}
+
+.graph-label {
+    font-size: 12px;
+    font-weight: bold;
+}
+
 .grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
