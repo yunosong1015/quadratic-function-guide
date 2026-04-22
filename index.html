@@ -44,6 +44,17 @@
             <div class="grid">
                 <div class="card">
                     <h3>그래프의 특징</h3>
+                    <div class="example-graph">
+                        <svg width="160" height="160" viewBox="0 0 200 200">
+                            <!-- Axes -->
+                            <line x1="20" y1="100" x2="180" y2="100" stroke="#ccc" stroke-width="1" />
+                            <line x1="100" y1="20" x2="100" y2="180" stroke="#ccc" stroke-width="1" />
+                            <!-- Parabola y = ax^2 (a > 0) -->
+                            <path d="M 60 40 Q 100 160 140 40" fill="none" stroke="var(--primary-color)" stroke-width="3" />
+                            <circle cx="100" cy="100" r="4" fill="var(--accent-color)" />
+                            <text x="110" y="115" class="graph-label">(0,0)</text>
+                        </svg>
+                    </div>
                     <ul class="reveal-list">
                         <li>원점 (0, 0)을 <span class="blank">꼭짓점</span>으로 합니다.</li>
                         <li>y축을 <span class="blank">축의 방정식(x=0)</span>으로 합니다.</li>
@@ -52,6 +63,19 @@
                 </div>
                 <div class="card">
                     <h3>상수 a의 역할</h3>
+                    <div class="example-graph">
+                        <svg width="160" height="160" viewBox="0 0 200 200">
+                            <!-- Axes -->
+                            <line x1="20" y1="100" x2="180" y2="100" stroke="#ccc" stroke-width="1" />
+                            <line x1="100" y1="20" x2="100" y2="180" stroke="#ccc" stroke-width="1" />
+                            <!-- a > 0 -->
+                            <path d="M 70 50 Q 100 150 130 50" fill="none" stroke="var(--primary-color)" stroke-width="2" />
+                            <!-- a < 0 -->
+                            <path d="M 70 150 Q 100 50 130 150" fill="none" stroke="var(--accent-color)" stroke-width="2" />
+                            <text x="140" y="50" class="graph-label" fill="var(--primary-color)">a>0</text>
+                            <text x="140" y="160" class="graph-label" fill="var(--accent-color)">a<0</text>
+                        </svg>
+                    </div>
                     <ul class="reveal-list">
                         <li><strong>a > 0:</strong> <span class="blank">아래로 볼록</span></li>
                         <li><strong>a < 0:</strong> <span class="blank">위로 볼록</span></li>
@@ -80,23 +104,23 @@
                         <text x="55" y="15" class="graph-label" fill="#ccc">y</text>
                         
                         <!-- Basic form y = ax^2 -->
-                        <path d="M 30 60 Q 60 140 90 60" fill="none" stroke="#bbb" stroke-width="2" stroke-dasharray="4" />
-                        <text x="25" y="50" class="graph-label" fill="#bbb">y=ax²</text>
+                        <path d="M 30 100 Q 60 140 90 100" fill="none" stroke="#bbb" stroke-width="2" stroke-dasharray="4" />
+                        <text x="25" y="90" class="graph-label" fill="#bbb">y=ax²</text>
                         <!-- Origin Label -->
                         <circle cx="60" cy="140" r="3" fill="#bbb" />
                         <text x="45" y="155" class="graph-label" fill="#bbb">(0, 0)</text>
 
-                        <!-- Standard form y = a(x-p)?? + q -->
-                        <!-- p=100, q=-40 relative to (60, 140) -> vertex at (160, 100) -->
-                        <path d="M 130 20 Q 160 100 190 20" fill="none" stroke="var(--primary-color)" stroke-width="3" />
-                        <text x="135" y="15" class="graph-label" fill="var(--primary-color)">y=a(x-p)²+q</text>
+                        <!-- Standard form y = a(x-p)² + q -->
+                        <!-- Vertex (p, q) at (150, 80) which is p=90 units right, q=60 units up from (60, 140) -->
+                        <path d="M 120 40 Q 150 80 180 40" fill="none" stroke="var(--primary-color)" stroke-width="3" />
+                        <text x="135" y="30" class="graph-label" fill="var(--primary-color)">y=a(x-p)²+q</text>
                         
                         <!-- Translation Vector -->
-                        <line x1="60" y1="140" x2="160" y2="100" stroke="#888" stroke-width="1.5" stroke-dasharray="2" marker-end="url(#arrow)" />
+                        <line x1="60" y1="140" x2="150" y2="80" stroke="#888" stroke-width="1.5" stroke-dasharray="2" marker-end="url(#arrow)" />
                         
                         <!-- Vertex -->
-                        <circle cx="160" cy="100" r="4" fill="var(--accent-color)" />
-                        <text x="165" y="115" class="graph-label" fill="var(--accent-color)">(p, q)</text>
+                        <circle cx="150" cy="80" r="4" fill="var(--accent-color)" />
+                        <text x="155" y="95" class="graph-label" fill="var(--accent-color)">(p, q)</text>
                     </svg>
                 </div>
                 <p>이차함수 y = ax²의 그래프를 x축 방향으로 p만큼, y축 방향으로 q만큼 평행이동한 것입니다.</p>
