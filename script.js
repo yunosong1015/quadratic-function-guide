@@ -133,4 +133,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         calcResult.textContent = `꼭짓점: (${p.toFixed(2)}, ${q.toFixed(2)}) | 표준형: y = ${a}(x ${p >= 0 ? '-' : '+'} ${Math.abs(p).toFixed(2)})² ${q >= 0 ? '+' : '-'} ${Math.abs(q).toFixed(2)}`;
     });
+
+    // Reveal Logic
+    const revealBoxes = document.querySelectorAll('.reveal-box');
+    revealBoxes.forEach(box => {
+        box.addEventListener('click', function() {
+            this.classList.add('active');
+        });
+    });
 });

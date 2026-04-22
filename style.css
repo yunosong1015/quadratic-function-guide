@@ -95,6 +95,68 @@ h2 {
     box-shadow: var(--shadow);
 }
 
+.card h3 {
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+.reveal-box {
+    min-height: 100px;
+    background-color: #f8f9fa;
+    border: 2px dashed #ccd0d5;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 10px;
+}
+
+.reveal-box:hover {
+    background-color: #eef2f7;
+    border-color: var(--primary-color);
+}
+
+.reveal-box::before {
+    content: "클릭하여 내용 보기";
+    color: #888;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.reveal-box.active {
+    background-color: transparent;
+    border: none;
+    min-height: auto;
+    display: block;
+    cursor: default;
+    padding: 0;
+}
+
+.reveal-box.active::before {
+    display: none;
+}
+
+.reveal-content {
+    display: none;
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+.reveal-box.active .reveal-content {
+    display: block;
+    animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
